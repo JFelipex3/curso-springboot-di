@@ -18,11 +18,11 @@ public class ProductServiceImpl implements ProductService {
     //@Qualifier("productFoo") // Si no se indica inyecta el Primary
     private ProductRepository repository;
 
-    @Autowired
     private Environment environment;
 
-    public ProductServiceImpl(@Qualifier("productList") ProductRepository repository) {
+    public ProductServiceImpl(@Qualifier("productList") ProductRepository repository, Environment environment) {
         this.repository = repository;
+        this.environment = environment;
     }
 
     @Override
