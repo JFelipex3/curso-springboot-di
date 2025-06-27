@@ -3,9 +3,11 @@ package com.jmachuca.springboot.di.app.springboot_di.repositories;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.jmachuca.springboot.di.app.springboot_di.models.Product;
 
+@RequestScope // Define que cada ejecución es por Request y luego se destruye, en caso de no indicar es Singleton y se actualiza para todos almacenando en memoria
 @Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository {
 
