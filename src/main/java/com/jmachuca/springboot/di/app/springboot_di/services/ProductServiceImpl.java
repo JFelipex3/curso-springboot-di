@@ -27,14 +27,14 @@ public class ProductServiceImpl implements ProductService {
                 Double priceImpuesto = p.getPrice() * 0.19;
                 Double priceTotal = p.getPrice() + priceImpuesto;
 
-                // Product newProduct = (Product) p.clone(); // Se aplica clone para no mutar el objeto original
-                // newProduct.setPrice(priceTotal.longValue());
+                Product newProduct = (Product) p.clone(); // Se aplica clone para no mutar el objeto original
+                newProduct.setPrice(priceTotal.longValue());
 
-                // return newProduct;
+                return newProduct;
 
-                p.setPrice(priceTotal.longValue());
+                // p.setPrice(priceTotal.longValue());
 
-                return p;
+                // return p;
 
             }).collect(Collectors.toList());
     }
