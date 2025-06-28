@@ -15,7 +15,7 @@ import com.jmachuca.springboot.di.app.springboot_di.repositories.ProductReposito
 })
 public class ValuesConfig {
 
-    @Bean // Forma alternativa de crear un componente
+    @Bean("productJson") // Forma alternativa de crear un componente
     // @Primary
     ProductRepository productRepositoryJson() {
         return new ProductRepositoryJson();
