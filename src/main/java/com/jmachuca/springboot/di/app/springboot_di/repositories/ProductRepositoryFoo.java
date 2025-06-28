@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.jmachuca.springboot.di.app.springboot_di.models.Product;
 
-@Primary
 @Repository("productFoo")
 public class ProductRepositoryFoo implements ProductRepository {
 
