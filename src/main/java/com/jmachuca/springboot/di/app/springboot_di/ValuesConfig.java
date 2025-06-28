@@ -2,7 +2,7 @@ package com.jmachuca.springboot.di.app.springboot_di;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+//import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
@@ -16,7 +16,7 @@ import com.jmachuca.springboot.di.app.springboot_di.repositories.ProductReposito
 public class ValuesConfig {
 
     @Bean // Forma alternativa de crear un componente
-    @Primary
+    // @Primary
     ProductRepository productRepositoryJson() {
         return new ProductRepositoryJson();
     }

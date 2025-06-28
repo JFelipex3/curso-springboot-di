@@ -20,15 +20,15 @@ public class ProductServiceImpl implements ProductService {
 
     private Environment environment;
 
-    // public ProductServiceImpl(@Qualifier("productList") ProductRepository repository, Environment environment) {
-    //     this.repository = repository;
-    //     this.environment = environment;
-    // }
-
-    public ProductServiceImpl(ProductRepository repository, Environment environment) {
+    public ProductServiceImpl(@Qualifier("productRepositoryJson") ProductRepository repository, Environment environment) {
         this.repository = repository;
         this.environment = environment;
     }
+
+    // public ProductServiceImpl(ProductRepository repository, Environment environment) {
+    //     this.repository = repository;
+    //     this.environment = environment;
+    // }
 
     @Override
     public List<Product> findAll() {
