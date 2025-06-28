@@ -1,6 +1,5 @@
 package com.jmachuca.springboot.di.app.springboot_di.repositories;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
