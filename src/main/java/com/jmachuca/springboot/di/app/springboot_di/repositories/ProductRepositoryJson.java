@@ -7,11 +7,10 @@ import java.util.List;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jmachuca.springboot.di.app.springboot_di.models.Product;
 
+// Este no es un componente spring
 public class ProductRepositoryJson implements ProductRepository {
 
     private List<Product> list;
@@ -21,12 +20,19 @@ public class ProductRepositoryJson implements ProductRepository {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            list = Arrays.asList(objectMapper.readValue(resource.getFile(), Product[].class));
-        } catch (StreamReadException e) {
-            e.printStackTrace();
-        } catch (DatabindException e) {
-            e.printStackTrace();
+            list = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Product[].class));
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Contructor cuando se suministra el resource
+    public ProductRepositoryJson(Resource resource) {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            list = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Product[].class));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
